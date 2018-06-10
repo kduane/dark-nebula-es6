@@ -17,7 +17,7 @@ describe('arrays', () => {
       expect(result.join(' ')).toBe('1 3 4');
       expect(result).toEqual(a);
     });
-  })
+  });
 
   it('you should be able to add an item to the end of an array', () => {
     let result = append(a, 10);
