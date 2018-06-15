@@ -1,13 +1,9 @@
 removeWithoutCopy = (arr, item) => {
-  // let index = arr.indexOf(item);
-  // if (index !== -1) {
-  //   arr.splice(index, 1);
-  // }
-
-  for (let i = 0; i < (arr.length); i++) {
-    if (arr[i] == item) {
-      arr.splice(i, 1);
-    }
+  for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == item) {
+        arr.splice(i, 1);
+        i --;
+      }
   }
   return arr;
 };
@@ -53,21 +49,41 @@ count = (arr, item) => {
 };
 
 duplicates = (arr) => {
-  let i;
-  const len = arr.length;
-  const result = [];
-  const obj = {};
-  for (i = 0; i < len; i++) {
-    obj[arr[i]] = 0;
+  let results = [];
+  for (a = 0; a < arr.length; a++) {
+    if (!results.includes(arr[a])) {
+      for (b = 0; b < arr.length; b++) {
+        if (a != b && arr[a] == arr[b]) {
+          results.push(arr[a]);
+          break;
+        }
+      }
+    }
   }
-  for (i in obj) {
-    result.push(i);
-  }
-  return result;
+
+
+  // let results = [];
+  // for (i = 0; i < arr.length; i++) {
+  //   if (!results.includes(arr[i])) {
+  //     for (ii = 0; ii < arr.length; ii++) {
+  //       if (arr[i] == arr[ii]) {
+  //         results.push(arr[ii]);
+  //         break;
+  //       }
+  //     }
+  //   }
+  // }
+  return results;
 };
 
 square = (arr) => {
 
+  let result = [];
+  for (i = 0; i < len; i++) {
+    var square = Math.pow(arr[i], 2);
+    result.push(square);
+  }
+  return result;
 };
 
 findAllOccurrences = (arr, item) => {
