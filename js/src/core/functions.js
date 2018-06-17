@@ -1,9 +1,19 @@
 isPrime = (num) => {
-
+  for (var i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 };
 
 arraySum = (array) => {
-
+  var total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total += array[i];
+  }
+  return total;
 };
 
 fizzBuzz = (num) => {
@@ -15,4 +25,18 @@ fizzBuzz = (num) => {
   //
   // otherwise the function should return the number, or false if no number
   // was provided or the value provided is not a number
+  if (isNaN(num)) {
+    return num;
+  } else if (num === null) {
+    return null;
+  } else if (num % 5 === 0 && num % 3 === 0) {
+    return "fizzbuzz";
+  } else if (num % 5 === 0) {
+    return "buzz";
+  } else if (num % 3 === 0) {
+    return "fizz";
+  } else {
+    return num;
+  }
+
 };
