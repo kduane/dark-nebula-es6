@@ -77,15 +77,15 @@ duplicates = (arr) => {
 };
 
 square = (arr) => {
-
-  let result = [];
-  for (i = 0; i < len; i++) {
-    var square = Math.pow(arr[i], 2);
-    result.push(square);
-  }
-  return result;
+  return arr.map(function (x) {
+    return Math.pow(x, 2);
+  });
 };
 
 findAllOccurrences = (arr, item) => {
-
+  var indexes = [], i = -1;
+   while ((i = arr.indexOf(item, i+1)) != -1){
+       indexes.push(i);
+   }
+   return indexes;
 };
