@@ -1,5 +1,5 @@
 globals = () => {
-  myObject = {
+  var myObject = {
     name : 'Jory'
   };
 
@@ -7,5 +7,9 @@ globals = () => {
 };
 
 identity = (val1, val2) => {
-
+  if (val1 === val2) {
+    return true;
+  } else {
+    return false;
+  }
 };
