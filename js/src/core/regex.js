@@ -18,13 +18,20 @@ endsWithVowel = (string) => {
 };
 
 captureThreeNumbers = (string) => {
-  return (/\d{3}/).test(string);
+  let regex = /(\d{3})/;
+  let found = string.match(regex);
+  if (found != null) {
+    return found[0];
+  } else {
+    return false;
+  }
 };
 
 matchesPattern = (string) => {
-  // return ().test(string);
+  var regex = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/;
+  return regex.test(string);
 };
 
 isUSD = (string) => {
-  // return ().test(string);
+  return (/^\$?(([1-9]\d{0,50}(,\d{3})*)|0)?\.\d{1,2}$/).test(string);
 };
