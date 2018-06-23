@@ -33,5 +33,8 @@ matchesPattern = (string) => {
 };
 
 isUSD = (string) => {
-  return (/^\$?(([1-9]\d{0,50}(,\d{3})*)|0)?\.\d{1,2}$/).test(string);
+  // return (/^\$?(([1-9]\d{0,50}(,\d{3})*)|0)?\.?\d{2}?$/).test(string);
+  return (/^\$\d+(,\d{3})*(\.[0-9]{2})?$/).test(string);
+  // return (/^\$?(([1-9]\d{0,50}(,\d{3})*)|0)?\.?[0-9]?[0-9]?$/).test(string);
+
 };
